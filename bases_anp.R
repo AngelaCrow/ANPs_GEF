@@ -1,10 +1,8 @@
 rm(list = ls())
 
 setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
-#ANP con variables y ecoregiones
+
 base<-read.csv("bases/baseclimapais45.csv")
-
-
 
 PC_1<-subset(base,NOMBRE=="Pantanos de Centla")           #1
 LT_1<-subset(base,NOMBRE=="Laguna de TÃ©rminos")           #2
@@ -68,7 +66,7 @@ write.csv(SO_1, "bases/Ocote/ocote_mes45.csv")
 write.csv(EV_1, "bases/Vizcainohumedad45.csv")
 write.csv(CAD_1, "bases/CADNRhumedad45.csv")
 write.csv(M_1, "bases/Mapimihumedad45.csv")
->>>>>>> 747239ac15ba68e9d5c8645f19f7175c6b7f2ad5
+
 
 rm(PC_1, LT_1, TC_1, MM_1, MN_1, J_1,
    SSPM_1,CAD_1,C1857_1,M_1,CS_1,SO_1,EV_1)
