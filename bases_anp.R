@@ -1,12 +1,8 @@
 rm(list = ls())
 
-library("SDMTools")
-library("raster")
-library("rgdal")
-library("maptools")
-
+setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
 #ANP con variables y ecoregiones
-base<-read.csv("bases/baseclimapais.csv")
+base<-read.csv("bases/baseclimapais45.csv")
 
 
 
