@@ -6,13 +6,7 @@ library("readr")
 
 setwd("/Volumes/GoogleDrive/My Drive/ANP_CC/bases_mes")
 
-anp<-read.csv("centla_mes45.csv")
-
-
-
-
 loc <- locale(encoding="windows-1252")
-
 anp<-readr::read_csv("Centla/centla_mes45.csv", locale=loc)
 
 names(anp)

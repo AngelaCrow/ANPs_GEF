@@ -19,20 +19,20 @@ SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
 EV_1<-subset(base,NOMBRE=="El VizcaÃ-no")                 #13  "El Vizca?no"
 
 
-write.csv(PC_1, "bases_mes/Centla/centla_mes45.csv")
-write.csv(LT_1, "bases_mes/Terminos/terminos_mes45.csv")
-write.csv(TC_1, "bases_mes/Tehuacan/tehuacan_mes45.csv")
-write.csv(MM_1, "bases_mes/Monarca/monarca_mes45.csv")
-write.csv(MN_1, "bases_mes/Nichupte/nichupte_mes45.csv")
-write.csv(J_1, "bases_mes/Janos/janos_mes45.csv")
-write.csv(SSPM_1, "bases_mes/Martir/ssmartir_mes45.csv")
-write.csv(C1857_1, "bases_mes/Constitucion/constitucion_mes45.csv")
-write.csv(CS_1, "bases_mes/Sumidero/sumidero_mes45.csv")
-write.csv(SO_1, "bases_mes/Ocote/ocote_mes45.csv")
+write.csv(PC_1, "bases_mes/Centla/centla_mes45.csv", fileEncoding = "UTF-8")
+write.csv(LT_1, "bases_mes/Terminos/terminos_mes45.csv",fileEncoding = "UTF-8")
+write.csv(TC_1, "bases_mes/Tehuacan/tehuacan_mes45.csv",fileEncoding = "UTF-8")
+write.csv(MM_1, "bases_mes/Monarca/monarca_mes45.csv",fileEncoding = "UTF-8")
+write.csv(MN_1, "bases_mes/Nichupte/nichupte_mes45.csv",fileEncoding = "UTF-8")
+write.csv(J_1, "bases_mes/Janos/janos_mes45.csv", fileEncoding = "UTF-8")
+write.csv(SSPM_1, "bases_mes/Martir/ssmartir_mes45.csv", fileEncoding = "UTF-8")
+write.csv(C1857_1, "bases_mes/Constitucion/constitucion_mes45.csv", fileEncoding = "UTF-8")
+write.csv(CS_1, "bases_mes/Sumidero/sumidero_mes45.csv", fileEncoding = "UTF-8")
+write.csv(SO_1, "bases_mes/Ocote/ocote_mes45.csv", fileEncoding = "UTF-8")
 
-write.csv(EV_1, "bases_mes/Vizcaino/vizcaino_mes45.csv")
-write.csv(CAD_1, "bases_mes/CADNR/CADNR_mes45.csv")
-write.csv(M_1, "bases_mes/Mapimi/mapimi_mes45.csv")
+write.csv(EV_1, "bases_mes/Vizcaino/vizcaino_mes45.csv", fileEncoding = "UTF-8")
+write.csv(CAD_1, "bases_mes/CADNR/CADNR_mes45.csv", fileEncoding = "UTF-8")
+write.csv(M_1, "bases_mes/Mapimi/mapimi_mes45.csv", fileEncoding = "UTF-8")
 
 
 base<-anp_hum
