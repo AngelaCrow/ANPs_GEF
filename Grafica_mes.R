@@ -1,15 +1,14 @@
 rm(list = ls())
 
 library("ggplot2")
-library("psych")
-library("pastecs")
 library("plyr")
+library("readr")
 
-setwd("E:/UniAtmos_P3/Tendencias/bases/Centla")
+setwd("/Volumes/GoogleDrive/My Drive/ANP_CC/bases_mes")
 
 anp<-read.csv("centla_mes45.csv")
 
-library("readr")
+
 
 
 loc <- locale(encoding="windows-1252")
