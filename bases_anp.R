@@ -1,4 +1,5 @@
-library(stringi)
+library(stringr)
+
 rm(list = ls())
 
 setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
@@ -16,9 +17,9 @@ C1857_1<-subset(base,NOMBRE=="ConstituciÃ³n de 1857")      #9
 CS_1<-subset(base,NOMBRE=="CaÃ±Ã³n del Sumidero")           #11
 SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
 
-EV_1<-filter(base, str_detect(NOMBRE, "El Viz"))                #13  "El Vizca?no"
-CAD_1<-subset(base,NOMBRE=="C.A.D.N.R. 004 Don Mart")   #8   "C.A.D.N.R. 004 Don Mart?n"
-M_1<-filter(base, str_detect(NOMBRE, "Mapim"))  #10  "Mapim?"
+EV_1<-suset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
+CAD_1<-subset(base,str_detect(base$NOMBRE,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
+M_1<-subset(base, str_detect(base$NOMBRE, "Mapim"))  #10  "Mapim?"
 
 write.csv(PC_1, "bases_mes/Centla/centla_mes45.csv", fileEncoding = "UTF-8")
 write.csv(LT_1, "bases_mes/Terminos/terminos_mes45.csv",fileEncoding = "UTF-8")
