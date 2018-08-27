@@ -1,11 +1,13 @@
 library("raster")
 library("rgdal")
+library("readr")
 
 setwd("E:/UniAtmos_P3/Tendencias")
+loc <- locale(encoding="windows-1252")
 
 anp_p<-read.csv("C:/CONABIO/Tendencias/anps_fed_terrestres2018.csv")
 
-anp_p<-read.csv("anps_fed_terrestres2018.csv")
+anp_p<-readr::read_csv("anps_fed_terrestres2018.csv", locale=loc)
 
 names(anp_p)
 
