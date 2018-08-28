@@ -3,8 +3,7 @@ library(stringr)
 rm(list = ls())
 
 setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
-
-base<-read.csv("bases/baseclimapais45.csv")
+base<-read.csv("baseclimapais85.csv")
 
 PC_1<-subset(base,NOMBRE=="Pantanos de Centla")           #1
 LT_1<-subset(base,NOMBRE=="Laguna de TÃ©rminos")           #2
@@ -16,25 +15,23 @@ SSPM_1<-subset(base,NOMBRE=="Sierra de San Pedro MÃ¡rtir") #7
 C1857_1<-subset(base,NOMBRE=="ConstituciÃ³n de 1857")      #9
 CS_1<-subset(base,NOMBRE=="CaÃ±Ã³n del Sumidero")           #11
 SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
-
-EV_1<-suset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
+EV_1<-subset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
 CAD_1<-subset(base,str_detect(base$NOMBRE,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
 M_1<-subset(base, str_detect(base$NOMBRE, "Mapim"))  #10  "Mapim?"
 
-write.csv(PC_1, "bases_mes/Centla/centla_mes45.csv", fileEncoding = "UTF-8")
-write.csv(LT_1, "bases_mes/Terminos/terminos_mes45.csv",fileEncoding = "UTF-8")
-write.csv(TC_1, "bases_mes/Tehuacan/tehuacan_mes45.csv",fileEncoding = "UTF-8")
-write.csv(MM_1, "bases_mes/Monarca/monarca_mes45.csv",fileEncoding = "UTF-8")
-write.csv(MN_1, "bases_mes/Nichupte/nichupte_mes45.csv",fileEncoding = "UTF-8")
-write.csv(J_1, "bases_mes/Janos/janos_mes45.csv", fileEncoding = "UTF-8")
-write.csv(SSPM_1, "bases_mes/Martir/ssmartir_mes45.csv", fileEncoding = "UTF-8")
-write.csv(C1857_1, "bases_mes/Constitucion/constitucion_mes45.csv", fileEncoding = "UTF-8")
-write.csv(CS_1, "bases_mes/Sumidero/sumidero_mes45.csv", fileEncoding = "UTF-8")
-write.csv(SO_1, "bases_mes/Ocote/ocote_mes45.csv", fileEncoding = "UTF-8")
-
-write.csv(EV_1, "bases_mes/Vizcaino/vizcaino_mes45.csv", fileEncoding = "UTF-8")
-write.csv(CAD_1, "bases_mes/CADNR/CADNR_mes45.csv", fileEncoding = "UTF-8")
-write.csv(M_1, "bases_mes/Mapimi/mapimi_mes45.csv", fileEncoding = "UTF-8")
+write.csv(PC_1, "bases_mes/Centla/centla_mes85.csv", fileEncoding = "UTF-8")
+write.csv(LT_1, "bases_mes/Terminos/terminos_mes85.csv",fileEncoding = "UTF-8")
+write.csv(TC_1, "bases_mes/Tehuacan/tehuacan_mes85.csv",fileEncoding = "UTF-8")
+write.csv(MM_1, "bases_mes/Monarca/monarca_mes85.csv",fileEncoding = "UTF-8")
+write.csv(MN_1, "bases_mes/Nichupte/nichupte_mes85.csv",fileEncoding = "UTF-8")
+write.csv(J_1, "bases_mes/Janos/janos_mes85.csv", fileEncoding = "UTF-8")
+write.csv(SSPM_1, "bases_mes/Martir/ssmartir_mes85.csv", fileEncoding = "UTF-8")
+write.csv(C1857_1, "bases_mes/Constitucion/constitucion_mes85.csv", fileEncoding = "UTF-8")
+write.csv(CS_1, "bases_mes/Sumidero/sumidero_mes85.csv", fileEncoding = "UTF-8")
+write.csv(SO_1, "bases_mes/Ocote/ocote_mes85.csv", fileEncoding = "UTF-8")
+write.csv(EV_1, "bases_mes/Vizcaino/vizcaino_mes85.csv", fileEncoding = "UTF-8")
+write.csv(CAD_1, "bases_mes/CADNR/CADNR_mes85.csv", fileEncoding = "UTF-8")
+write.csv(M_1, "bases_mes/Mapimi/mapimi_mes85.csv", fileEncoding = "UTF-8")
 
 
 base<-anp_hum
