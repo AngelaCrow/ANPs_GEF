@@ -15,7 +15,7 @@ coor <- anp_p[c("POINT_X", "POINT_Y")]
 
 #TMAXIMA####
 #CNRMCM5
-tmax2 <-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaCNRMCM5_rcp45/*p2tmax*.tif"))
+tmax2 <-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/TMaximaCNRMCM5_rcp45/*p2tmax*.rst"))
 anp_tmax2 <- as.data.frame(raster::extract(tmax2, coor))
 names(anp_tmax2)
 colnames(anp_tmax2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -23,7 +23,7 @@ colnames(anp_tmax2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Jul
 #plot(tmax2)
 rm(tmax2)
 
-tmax3<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaCNRMCM5_rcp45/*p3tmax*.tif"))
+tmax3<-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/TMaximaCNRMCM5_rcp45/*p3tmax*.rst"))
 anp_tmax3 <- as.data.frame(raster::extract(tmax3, coor))
 names(anp_tmax3)
 colnames(anp_tmax3)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -37,7 +37,7 @@ anp_tmax.3<-cbind(anp_p,anp_tmax3, Periodo="1980-2009", Variable="Temperatura m�
 tmax_historico<-rbind(anp_tmax.2,anp_tmax.3)
 names(tmax_historico)
 
-tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaCNRMCM5_rcp45/*p4tmax*.tif"))
+tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2015-2039_tmax/*p4tmax*.tif"))
 anp_tmax4 <- as.data.frame(raster::extract(tmax4, coor))
 names(anp_tmax4)
 colnames(anp_tmax4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -46,7 +46,7 @@ anp_tmax4<-cbind(anp_p,anp_tmax4, Periodo="2015-2039", Variable="Temperatura má
 #plot(tmax4)
 rm(tmax4)
 
-tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaCNRMCM5_rcp45/*p5tmax*.tif"))
+tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2045-2069_tmax/*p5tmax*.tif"))
 anp_tmax5 <- as.data.frame(raster::extract(tmax5, coor))
 names(anp_tmax5)
 colnames(anp_tmax5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -55,13 +55,13 @@ anp_tmax5<-cbind(anp_p,anp_tmax5, Periodo="2045-2069", Variable="Temperatura má
 #plot(tmax5)
 rm(tmax5)
 
-tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaCNRMCM5_rcp45/*p6tmax*.tif"))
+tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2075-2099_tmax/*p6tmax*.tif"))
 anp_tmax6 <- as.data.frame(raster::extract(tmax6, coor))
 names(anp_tmax6)
 colnames(anp_tmax6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
                        "Agosto", "Septiembre","Octubre", "Noviembre", "Diciembre")
 anp_tmax6<-cbind(anp_p,anp_tmax6, Periodo="2075-2099", Variable="Temperatura máxima", MGC ="CNRMCM5_rcp45")
-#plot(tmax6)
+plot(tmax6)
 rm(tmax6)
 
 tmax_CNRMCM5_rcp45<-rbind(tmax_historico,anp_tmax4,anp_tmax5,anp_tmax6)
@@ -75,31 +75,31 @@ anp_tmax.3<-cbind(anp_p,anp_tmax3, Periodo="1980-2009", Variable="Temperatura m�
 tmax_historico<-rbind(anp_tmax.2,anp_tmax.3)
 names(tmax_historico)
 
-tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaGFDL_CM3_rcp45/*p4tmax*.tif"))
+tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2015-2039_tmax/*p4tmax*.tif"))
 anp_tmax4 <- as.data.frame(raster::extract(tmax4, coor))
 names(anp_tmax4)
 colnames(anp_tmax4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
                        "Agosto", "Septiembre","Octubre", "Noviembre", "Diciembre")
 anp_tmax4<-cbind(anp_p,anp_tmax4, Periodo="2015-2039", Variable="Temperatura máxima", MGC ="GFDL_CM3_rcp45")
-#plot(tmax4)
+plot(tmax4)
 rm(tmax4)
 
-tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaGFDL_CM3_rcp45/*p5tmax*.tif"))
+tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2045-2069_tmax/*p5tmax*.tif"))
 anp_tmax5 <- as.data.frame(raster::extract(tmax5, coor))
 names(anp_tmax5)
 colnames(anp_tmax5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
                        "Agosto", "Septiembre","Octubre", "Noviembre", "Diciembre")
 anp_tmax5<-cbind(anp_p,anp_tmax5, Periodo="2045-2069", Variable="Temperatura máxima", MGC ="GFDL_CM3_rcp45")
-#plot(tmax5)
+plot(tmax5)
 rm(tmax5)
 
-tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaGFDL_CM3_rcp45/*p6tmax*.tif"))
+tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2075-2099_tmax/*p6tmax*.tif"))
 anp_tmax6 <- as.data.frame(raster::extract(tmax6, coor))
 names(anp_tmax6)
 colnames(anp_tmax6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
                        "Agosto", "Septiembre","Octubre", "Noviembre", "Diciembre")
 anp_tmax6<-cbind(anp_p,anp_tmax6, Periodo="2075-2099", Variable="Temperatura máxima", MGC ="GFDL_CM3_rcp45")
-#plot(tmax6)
+plot(tmax6)
 rm(tmax6)
 
 tmax_GFDL_CM3_rcp45<-rbind(tmax_historico,anp_tmax4,anp_tmax5,anp_tmax6)
@@ -112,7 +112,7 @@ anp_tmax.3<-cbind(anp_p,anp_tmax3, Periodo="1980-2009", Variable="Temperatura m�
 tmax_historico<-rbind(anp_tmax.2,anp_tmax.3)
 names(tmax_historico)
 
-tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaHADGEM2_ES_rcp45/*p4tmax*.tif"))
+tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2015-2039_tmax/*p4tmax*.tif"))
 anp_tmax4 <- as.data.frame(raster::extract(tmax4, coor))
 names(anp_tmax4)
 colnames(anp_tmax4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -121,22 +121,22 @@ anp_tmax4<-cbind(anp_p,anp_tmax4, Periodo="2015-2039", Variable="Temperatura má
 #plot(tmax4)
 rm(tmax4)
 
-tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaHADGEM2_ES_rcp45/*p5tmax*.tif"))
+tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2045-2069_tmax/*p5tmax*.tif"))
 anp_tmax5 <- as.data.frame(raster::extract(tmax5, coor))
 names(anp_tmax5)
 colnames(anp_tmax5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
                        "Agosto", "Septiembre","Octubre", "Noviembre", "Diciembre")
 anp_tmax5<-cbind(anp_p,anp_tmax5, Periodo="2045-2069", Variable="Temperatura máxima", MGC ="HADGEM2_ES_rcp45")
-#plot(tmax5)
+plot(tmax5)
 rm(tmax5)
 
-tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaHADGEM2_ES_rcp45/*p6tmax*.tif"))
+tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2075-2099_tmax/*p6tmax*.tif"))
 anp_tmax6 <- as.data.frame(raster::extract(tmax6, coor))
 names(anp_tmax6)
 colnames(anp_tmax6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
                        "Agosto", "Septiembre","Octubre", "Noviembre", "Diciembre")
 anp_tmax6<-cbind(anp_p,anp_tmax6, Periodo="2075-2099", Variable="Temperatura máxima", MGC ="HADGEM2_ES_rcp45")
-#plot(tmax6)
+plot(tmax6)
 rm(tmax6)
 
 tmax_HADGEM2_ES_rcp45<-rbind(tmax_historico,anp_tmax4,anp_tmax5,anp_tmax6)
@@ -150,7 +150,7 @@ anp_tmax.3<-cbind(anp_p,anp_tmax3, Periodo="1980-2009", Variable="Temperatura m�
 tmax_historico<-rbind(anp_tmax.2,anp_tmax.3)
 names(tmax_historico)
 
-tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaMPI_ESM_LR_rcp45/*p4tmax*.tif"))
+tmax4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2015-2039_tmax/*p4tmax*.tif"))
 anp_tmax4 <- as.data.frame(raster::extract(tmax4, coor))
 names(anp_tmax4)
 colnames(anp_tmax4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -159,7 +159,7 @@ anp_tmax4<-cbind(anp_p,anp_tmax4, Periodo="2015-2039", Variable="Temperatura má
 #plot(tmax4)
 rm(tmax4)
 
-tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaMPI_ESM_LR_rcp45/*p5tmax*.tif"))
+tmax5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2045-2069_tmax/*p5tmax*.tif"))
 anp_tmax5 <- as.data.frame(raster::extract(tmax5, coor))
 names(anp_tmax5)
 colnames(anp_tmax5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -168,7 +168,7 @@ anp_tmax5<-cbind(anp_p,anp_tmax5, Periodo="2045-2069", Variable="Temperatura má
 #plot(tmax5)
 rm(tmax5)
 
-tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMaximaMPI_ESM_LR_rcp45/*p6tmax*.tif"))
+tmax6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2075-2099_tmax/*p6tmax*.tif"))
 anp_tmax6 <- as.data.frame(raster::extract(tmax6, coor))
 names(anp_tmax6)
 colnames(anp_tmax6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -186,7 +186,7 @@ rm(anp_tmax2,anp_tmax.2,anp_tmax3,anp_tmax.3,anp_tmax4,
 
 #TMINIMA####
 #CNRMCM5
-tmin2 <-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaCNRMCM5_rcp45/*p2tmin*.tif"))
+tmin2 <-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/TMinimaCNRMCM5_rcp45/*p2tmin*.rst"))
 anp_tmin2 <- as.data.frame(raster::extract(tmin2, coor))
 names(anp_tmin2)
 colnames(anp_tmin2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -195,7 +195,7 @@ colnames(anp_tmin2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Jul
 #plot(tmin2)
 rm(tmin2)
 
-tmin3<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaCNRMCM5_rcp45/*p3tmin*.tif"))
+tmin3<-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/TMinimaCNRMCM5_rcp45/*p3tmin*.rst"))
 anp_tmin3 <- as.data.frame(raster::extract(tmin3, coor))
 names(anp_tmin3)
 colnames(anp_tmin3)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -209,7 +209,7 @@ names(tmin_historico)
 #plot(tmin3)
 rm(tmin3)
 
-tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaCNRMCM5_rcp45/*p4tmin*.tif"))
+tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2015-2039_tmin/*p4tmin*.tif"))
 anp_tmin4 <- as.data.frame(raster::extract(tmin4, coor))
 names(anp_tmin4)
 colnames(anp_tmin4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -218,7 +218,7 @@ anp_tmin4<-cbind(anp_p,anp_tmin4, Periodo="2015-2039", Variable="Temperatura mí
 #plot(tmin4)
 rm(tmin4)
 
-tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaCNRMCM5_rcp45/*p5tmin*.tif"))
+tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2045-2069_tmin/*p5tmin*.tif"))
 anp_tmin5 <- as.data.frame(raster::extract(tmin5, coor))
 names(anp_tmin5)
 colnames(anp_tmin5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -227,7 +227,7 @@ anp_tmin5<-cbind(anp_p,anp_tmin5, Periodo="2045-2069", Variable="Temperatura mí
 #plot(tmin5)
 rm(tmin5)
 
-tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaCNRMCM5_rcp45/*p6tmin*.tif"))
+tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2075-2099_tmin/*p6tmin*.tif"))
 anp_tmin6 <- as.data.frame(raster::extract(tmin6, coor))
 names(anp_tmin6)
 colnames(anp_tmin6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -246,7 +246,7 @@ anp_tmin.3<-cbind(anp_p,anp_tmin3, Periodo="1980-2009", Variable="Temperatura m�
 tmin_historico<-rbind(anp_tmin.2,anp_tmin.3)
 names(tmin_historico)
 
-tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaGFDL_CM3_rcp45/*p4tmin*.tif"))
+tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2015-2039_tmin/*p4tmin*.tif"))
 anp_tmin4 <- as.data.frame(raster::extract(tmin4, coor))
 names(anp_tmin4)
 colnames(anp_tmin4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -255,7 +255,7 @@ anp_tmin4<-cbind(anp_p,anp_tmin4, Periodo="2015-2039", Variable="Temperatura mí
 #plot(tmin4)
 rm(tmin4)
 
-tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaGFDL_CM3_rcp45/*p5tmin*.tif"))
+tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2045-2069_tmin/*p5tmin*.tif"))
 anp_tmin5 <- as.data.frame(raster::extract(tmin5, coor))
 names(anp_tmin5)
 colnames(anp_tmin5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -264,7 +264,7 @@ anp_tmin5<-cbind(anp_p,anp_tmin5, Periodo="2045-2069", Variable="Temperatura mí
 #plot(tmin5)
 rm(tmin5)
 
-tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaGFDL_CM3_rcp45/*p6tmin*.tif"))
+tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2075-2099_tmin/*p6tmin*.tif"))
 anp_tmin6 <- as.data.frame(raster::extract(tmin6, coor))
 names(anp_tmin6)
 colnames(anp_tmin6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -283,7 +283,7 @@ anp_tmin.3<-cbind(anp_p,anp_tmin3, Periodo="1980-2009", Variable="Temperatura m�
 tmin_historico<-rbind(anp_tmin.2,anp_tmin.3)
 names(tmin_historico)
 
-tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaHADGEM2_ES_rcp45/*p4tmin*.tif"))
+tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2015-2039_tmin/*p4tmin*.tif"))
 anp_tmin4 <- as.data.frame(raster::extract(tmin4, coor))
 names(anp_tmin4)
 colnames(anp_tmin4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -292,7 +292,7 @@ anp_tmin4<-cbind(anp_p,anp_tmin4, Periodo="2015-2039", Variable="Temperatura mí
 #plot(tmin4)
 rm(tmin4)
 
-tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaHADGEM2_ES_rcp45/*p5tmin*.tif"))
+tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2045-2069_tmin/*p5tmin*.tif"))
 anp_tmin5 <- as.data.frame(raster::extract(tmin5, coor))
 names(anp_tmin5)
 colnames(anp_tmin5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -301,7 +301,7 @@ anp_tmin5<-cbind(anp_p,anp_tmin5, Periodo="2045-2069", Variable="Temperatura mí
 #plot(tmin5)
 rm(tmin5)
 
-tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaHADGEM2_ES_rcp45/*p6tmin*.tif"))
+tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2075-2099_tmin/*p6tmin*.tif"))
 anp_tmin6 <- as.data.frame(raster::extract(tmin6, coor))
 names(anp_tmin6)
 colnames(anp_tmin6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -319,7 +319,7 @@ anp_tmin.3<-cbind(anp_p,anp_tmin3, Periodo="1980-2009", Variable="Temperatura m�
 tmin_historico<-rbind(anp_tmin.2,anp_tmin.3)
 names(tmin_historico)
 
-tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaMPI_ESM_LR_rcp45/*p4tmin*.tif"))
+tmin4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2015-2039_tmin/*p4tmin*.tif"))
 anp_tmin4 <- as.data.frame(raster::extract(tmin4, coor))
 names(anp_tmin4)
 colnames(anp_tmin4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -328,7 +328,7 @@ anp_tmin4<-cbind(anp_p,anp_tmin4, Periodo="2015-2039", Variable="Temperatura mí
 #plot(tmin4)
 rm(tmin4)
 
-tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaMPI_ESM_LR_rcp45/*p5tmin*.tif"))
+tmin5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2045-2069_tmin/*p5tmin*.tif"))
 anp_tmin5 <- as.data.frame(raster::extract(tmin5, coor))
 names(anp_tmin5)
 colnames(anp_tmin5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -337,7 +337,7 @@ anp_tmin5<-cbind(anp_p,anp_tmin5, Periodo="2045-2069", Variable="Temperatura mí
 #plot(tmin5)
 rm(tmin5)
 
-tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TMinimaMPI_ESM_LR_rcp45/*p6tmin*.tif"))
+tmin6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2075-2099_tmin/*p6tmin*.tif"))
 anp_tmin6 <- as.data.frame(raster::extract(tmin6, coor))
 names(anp_tmin6)
 colnames(anp_tmin6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -353,7 +353,7 @@ rm(anp_tmin2,anp_tmin.2,anp_tmin.3,anp_tmin3,anp_tmin4,
    anp_tmin5, anp_tmin6,tmin_historico, tmin_GFDL_CM3_rcp45,tmin_CNRMCM5_rcp45,tmin_HADGEM2_ES_rcp45,tmin_MPI_ESM_LR_rcp45)
 
 #TPROMEDIO####
-tmean2 <-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioCNRMCM5_rcp45/*p2tmean*.tif"))
+tmean2 <-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/TPromedioCNRMCM5_rcp45/*p2tmean*.rst"))
 anp_tmean2 <- as.data.frame(raster::extract(tmean2, coor))
 names(anp_tmean2)
 colnames(anp_tmean2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -361,7 +361,7 @@ colnames(anp_tmean2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Ju
 #plot(tmean2)
 rm(tmean2)
 
-tmean3<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioCNRMCM5_rcp45/*p3tmean*.tif"))
+tmean3<-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/TPromedioCNRMCM5_rcp45/*p3tmean*.rst"))
 anp_tmean3 <- as.data.frame(raster::extract(tmean3, coor))
 names(anp_tmean3)
 colnames(anp_tmean3)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -374,7 +374,7 @@ anp_tmean.3<-cbind(anp_p,anp_tmean3, Periodo="1980-2009", Variable="Temperatura 
 tmean_historico<-rbind(anp_tmean.2,anp_tmean.3)
 names(tmean_historico)
 
-tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioCNRMCM5_rcp45/*p4tmean*.tif"))
+tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2015-2039_tprom/*p4tmean*.tif"))
 anp_tmean4 <- as.data.frame(raster::extract(tmean4, coor))
 names(anp_tmean4)
 colnames(anp_tmean4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -383,7 +383,7 @@ anp_tmean4<-cbind(anp_p,anp_tmean4, Periodo="2015-2039", Variable="Temperatura p
 #plot(tmean4)
 rm(tmean4)
 
-tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioCNRMCM5_rcp45/*p5tmean*.tif"))
+tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2045-2069_tprom/*p5tmean*.tif"))
 anp_tmean5 <- as.data.frame(raster::extract(tmean5, coor))
 names(anp_tmean5)
 colnames(anp_tmean5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -392,7 +392,7 @@ anp_tmean5<-cbind(anp_p,anp_tmean5, Periodo="2045-2069", Variable="Temperatura p
 #plot(tmean5)
 rm(tmean5)
 
-tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioCNRMCM5_rcp45/*p6tmean*.tif"))
+tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2075-2099_tprom/*p6tmean*.tif"))
 anp_tmean6 <- as.data.frame(raster::extract(tmean6, coor))
 names(anp_tmean6)
 colnames(anp_tmean6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -411,7 +411,7 @@ anp_tmean.3<-cbind(anp_p,anp_tmean3, Periodo="1980-2009", Variable="Temperatura 
 tmean_historico<-rbind(anp_tmean.2,anp_tmean.3)
 names(tmean_historico)
 
-tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioGFDL_CM3_rcp45/*p4tprom*.tif"))
+tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2015-2039_tprom/*p4tprom*.tif"))
 anp_tmean4 <- as.data.frame(raster::extract(tmean4, coor))
 names(anp_tmean4)
 colnames(anp_tmean4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -420,7 +420,7 @@ anp_tmean4<-cbind(anp_p,anp_tmean4, Periodo="2015-2039", Variable="Temperatura p
 #plot(tmean4)
 rm(tmean4)
 
-tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioGFDL_CM3_rcp45/*p5tprom*.tif"))
+tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2045-2069_tprom/*p5tprom*.tif"))
 anp_tmean5 <- as.data.frame(raster::extract(tmean5, coor))
 names(anp_tmean5)
 colnames(anp_tmean5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -429,7 +429,7 @@ anp_tmean5<-cbind(anp_p,anp_tmean5, Periodo="2045-2069", Variable="Temperatura p
 #plot(tmean5)
 rm(tmean5)
 
-tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioGFDL_CM3_rcp45/*p6tprom*.tif"))
+tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2075-2099_tprom/*p6tprom*.tif"))
 anp_tmean6 <- as.data.frame(raster::extract(tmean6, coor))
 names(anp_tmean6)
 colnames(anp_tmean6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -447,7 +447,7 @@ anp_tmean.3<-cbind(anp_p,anp_tmean3, Periodo="1980-2009", Variable="Temperatura 
 tmean_historico<-rbind(anp_tmean.2,anp_tmean.3)
 names(tmean_historico)
 
-tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioHADGEM2_ES_rcp45/*p4tprom*.tif"))
+tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2015-2039_tprom/*p4tprom*.tif"))
 anp_tmean4 <- as.data.frame(raster::extract(tmean4, coor))
 names(anp_tmean4)
 colnames(anp_tmean4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -456,7 +456,7 @@ anp_tmean4<-cbind(anp_p,anp_tmean4, Periodo="2015-2039", Variable="Temperatura p
 #plot(tmean4)
 rm(tmean4)
 
-tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioHADGEM2_ES_rcp45/*p5tprom*.tif"))
+tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2045-2069_tprom/*p5tprom*.tif"))
 anp_tmean5 <- as.data.frame(raster::extract(tmean5, coor))
 names(anp_tmean5)
 colnames(anp_tmean5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -465,7 +465,7 @@ anp_tmean5<-cbind(anp_p,anp_tmean5, Periodo="2045-2069", Variable="Temperatura p
 #plot(tmean5)
 rm(tmean5)
 
-tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioHADGEM2_ES_rcp45/*p6tprom*.tif"))
+tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2075-2099_tprom/*p6tprom*.tif"))
 anp_tmean6 <- as.data.frame(raster::extract(tmean6, coor))
 names(anp_tmean6)
 colnames(anp_tmean6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -484,7 +484,7 @@ anp_tmean.3<-cbind(anp_p,anp_tmean3, Periodo="1980-2009", Variable="Temperatura 
 tmean_historico<-rbind(anp_tmean.2,anp_tmean.3)
 names(tmean_historico)
 
-tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioMPI_ESM_LR_rcp45/*p4Tmean*.tif"))
+tmean4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2015-2039_tprom/*p4Tmean*.tif"))
 anp_tmean4 <- as.data.frame(raster::extract(tmean4, coor))
 names(anp_tmean4)
 colnames(anp_tmean4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -493,7 +493,7 @@ anp_tmean4<-cbind(anp_p,anp_tmean4, Periodo="2015-2039", Variable="Temperatura p
 #plot(tmean4)
 rm(tmean4)
 
-tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioMPI_ESM_LR_rcp45/*p5Tmean*.tif"))
+tmean5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2045-2069_tprom/*p5Tmean*.tif"))
 anp_tmean5 <- as.data.frame(raster::extract(tmean5, coor))
 names(anp_tmean5)
 colnames(anp_tmean5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -502,7 +502,7 @@ anp_tmean5<-cbind(anp_p,anp_tmean5, Periodo="2045-2069", Variable="Temperatura p
 #plot(tmean5)
 rm(tmean5)
 
-tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/TPromedioMPI_ESM_LR_rcp45/*p6Tmean*.tif"))
+tmean6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2075-2099_tprom/*p6Tmean*.tif"))
 anp_tmean6 <- as.data.frame(raster::extract(tmean6, coor))
 names(anp_tmean6)
 colnames(anp_tmean6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -520,8 +520,7 @@ rm(anp_tmean2,anp_tmean3,anp_tmean4, anp_tmean5, anp_tmean6,tmean_historico,
 
 #PRECIPITACION####
 #CNRMCM5
-
-prec2 <-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionCNRMCM5_rcp45/*p2prec*.tif"))
+prec2 <-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/PrecipitacionCNRMCM5_rcp45/*p2prec*.rst"))
 anp_prec2 <- as.data.frame(raster::extract(prec2, coor))
 names(anp_prec2)
 colnames(anp_prec2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -530,7 +529,7 @@ colnames(anp_prec2)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Jul
 #plot(prec2)
 rm(prec2)
 
-prec3<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionCNRMCM5_rcp45/*p3prec*.tif"))
+prec3<-stack(Sys.glob("E:/3.CONABIO-IBUNAM_CC/reporte_sep17/entrega_sep17_CNMA/capas/capas_g/tiff/PrecipitacionCNRMCM5_rcp45/*p3prec*.rst"))
 anp_prec3 <- as.data.frame(raster::extract(prec3, coor))
 names(anp_prec3)
 colnames(anp_prec3)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -543,7 +542,7 @@ anp_prec.3<-cbind(anp_p,anp_prec3, Periodo="1980-2009", Variable="Precipitación
 prec_historico<-rbind(anp_prec.2,anp_prec.3)
 names(prec_historico)
 
-prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionCNRMCM5_rcp45/*p4prec*.tif"))
+prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2015-2039_prec/*p4prec*.tif"))
 anp_prec4 <- as.data.frame(raster::extract(prec4, coor))
 names(anp_prec4)
 colnames(anp_prec4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -552,7 +551,7 @@ anp_prec4<-cbind(anp_p,anp_prec4, Periodo="2015-2039", Variable="Precipitación"
 #plot(prec4)
 rm(prec4)
 
-prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionCNRMCM5_rcp45/*p5prec*.tif"))
+prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2045-2069_prec/*p5prec*.tif"))
 anp_prec5 <- as.data.frame(raster::extract(prec5, coor))
 names(anp_prec5)
 colnames(anp_prec5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -561,7 +560,7 @@ anp_prec5<-cbind(anp_p,anp_prec5, Periodo="2045-2069", Variable="Precipitación"
 #plot(prec5)
 rm(prec5)
 
-prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionCNRMCM5_rcp45/*p6prec*.tif"))
+prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/CNRMCM5_rcp45_2075-2099_prec/*p6prec*.tif"))
 anp_prec6 <- as.data.frame(raster::extract(prec6, coor))
 names(anp_prec6)
 colnames(anp_prec6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -580,7 +579,7 @@ anp_prec.3<-cbind(anp_p,anp_prec3, Periodo="1980-2009", Variable="Precipitación
 prec_historico<-rbind(anp_prec.2,anp_prec.3)
 names(prec_historico)
 
-prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionGFDL_CM3_rcp45/*p4prec*.tif"))
+prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2015-2039_prec/*p4prec*.tif"))
 anp_prec4 <- as.data.frame(raster::extract(prec4, coor))
 names(anp_prec4)
 colnames(anp_prec4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -589,7 +588,7 @@ anp_prec4<-cbind(anp_p,anp_prec4, Periodo="2015-2039", Variable="Precipitación"
 #plot(prec4)
 rm(prec4)
 
-prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionGFDL_CM3_rcp45/*p5prec*.tif"))
+prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2045-2069_prec/*p5prec*.tif"))
 anp_prec5 <- as.data.frame(raster::extract(prec5, coor))
 names(anp_prec5)
 colnames(anp_prec5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -598,7 +597,7 @@ anp_prec5<-cbind(anp_p,anp_prec5, Periodo="2045-2069", Variable="Precipitación"
 #plot(prec5)
 rm(prec5)
 
-prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionGFDL_CM3_rcp45/*p6prec*.tif"))
+prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/GFDL_CM3_rcp45_2075-2099_prec/*p6prec*.tif"))
 anp_prec6 <- as.data.frame(raster::extract(prec6, coor))
 names(anp_prec6)
 colnames(anp_prec6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -617,7 +616,7 @@ anp_prec.3<-cbind(anp_p,anp_prec3, Periodo="1980-2009", Variable="Precipitación
 prec_historico<-rbind(anp_prec.2,anp_prec.3)
 names(prec_historico)
 
-prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionHADGEM2_ES_rcp45/*p4prec*.tif"))
+prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2015-2039_prec/*p4prec*.tif"))
 anp_prec4 <- as.data.frame(raster::extract(prec4, coor))
 names(anp_prec4)
 colnames(anp_prec4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -626,7 +625,7 @@ anp_prec4<-cbind(anp_p,anp_prec4, Periodo="2015-2039", Variable="Precipitación"
 #plot(prec4)
 rm(prec4)
 
-prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionHADGEM2_ES_rcp45/*p5prec*.tif"))
+prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2045-2069_prec/*p5prec*.tif"))
 anp_prec5 <- as.data.frame(raster::extract(prec5, coor))
 names(anp_prec5)
 colnames(anp_prec5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -635,7 +634,7 @@ anp_prec5<-cbind(anp_p,anp_prec5, Periodo="2045-2069", Variable="Precipitación"
 #plot(prec5)
 rm(prec5)
 
-prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionHADGEM2_ES_rcp45/*p6prec*.tif"))
+prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/HADGEM2_ES_rcp45_2075-2099_prec/*p6prec*.tif"))
 anp_prec6 <- as.data.frame(raster::extract(prec6, coor))
 names(anp_prec6)
 colnames(anp_prec6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -653,7 +652,7 @@ anp_prec.3<-cbind(anp_p,anp_prec3, Periodo="1980-2009", Variable="Precipitación
 prec_historico<-rbind(anp_prec.2,anp_prec.3)
 names(prec_historico)
 
-prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionMPI_ESM_LR_rcp45/*p4prec*.tif"))
+prec4<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2015-2039_prec/*p4prec*.tif"))
 anp_prec4 <- as.data.frame(raster::extract(prec4, coor))
 names(anp_prec4)
 colnames(anp_prec4)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -662,7 +661,7 @@ anp_prec4<-cbind(anp_p,anp_prec4, Periodo="2015-2039", Variable="Precipitación"
 #plot(prec4)
 rm(prec4)
 
-prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionMPI_ESM_LR_rcp45/*p5prec*.tif"))
+prec5<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2045-2069_prec/*p5prec*.tif"))
 anp_prec5 <- as.data.frame(raster::extract(prec5, coor))
 names(anp_prec5)
 colnames(anp_prec5)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -671,7 +670,7 @@ anp_prec5<-cbind(anp_p,anp_prec5, Periodo="2045-2069", Variable="Precipitación"
 #plot(prec5)
 rm(prec5)
 
-prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/PrecipitacionMPI_ESM_LR_rcp45/*p6prec*.tif"))
+prec6<-stack(Sys.glob("E:/UniAtmos_P3/UniAtmosAngela/MPI_ESM_LR_rcp45_2075-2099_prec/*p6prec*.tif"))
 anp_prec6 <- as.data.frame(raster::extract(prec6, coor))
 names(anp_prec6)
 colnames(anp_prec6)<-c("Enero", "Febrero", "Marzo","Abril","Mayo", "Junio", "Julio",
@@ -689,5 +688,5 @@ rm(anp_tmean.2,anp_tmean.3,anp_prec.2,anp_prec.3,anp_prec2,anp_prec3,anp_prec4, 
 
 #BIND###
 base<-rbind(basesotaprec,basesotatmean,basesotatmin,basesotatmx)
-write.csv(base,"bases/baseclimapais.csv", fileEncoding = "UTF-8")
+write.csv(base,"bases/baseclimapais_n.csv", fileEncoding = "UTF-8")
   
