@@ -7,30 +7,28 @@ library("readr")
 setwd("/Volumes/GoogleDrive/My Drive/ANP_CC/bases_mes")
 
 loc <- locale(encoding="windows-1252")
-anp<-readr::read_csv("Centla/centla_mes45.csv", locale=loc)
-
+anp<-readr::read_csv("CADNR/CADNR_mes85.csv", locale=loc)
+#anp<-readr::read_csv("CADNR/CADNR_mes85.csv")
+unique(anp$Variable)
 names(anp)
 head(anp)
 
-Reserva<-as.vector(anp[2,6]) #nombre del anp que esta en la columna 5 fila 2
+Reserva<-as.vector(anp[2,7]) #nombre del anp que esta en la columna 5 fila 2
 Reserva
+Reserva<-"C.A.D.N.R. 004 Don Martin"
 
 #selecion columnas
 base<-cbind(anp[c("POINT_X")],anp[c("POINT_Y")],anp[c("Enero")],anp[c("Febrero")],anp[c("Marzo")],anp[c("Abril")],
             anp[c("Mayo")],anp[c("Junio")],anp[c("Julio")],anp[c("Agosto")],anp[c("Septiembre")],anp[c("Octubre")],
             anp[c("Noviembre")],anp[c("Diciembre")],anp[c("Periodo")],anp[c("Variable")],anp[c("MGC")])
 
-
-base<-cbind.data.frame( Reserva=Reserva,base)
-
 base<-cbind.data.frame(Reserva=Reserva,base)
-
 head(base)
 
-base<-na.omit(subset(base, MGC="CNRMCM5_rcp45"))
+base<-na.omit(subset(base, MGC="CNRMCM5_rcp85"))
 unique(base$Variable)
 
-#write.csv(base_anp,"E:/3.CONABIO-IBUNAM_CC/bases/ANP/monarca/monarca_mes_pas.csv")
+#write.csv(base_anp,"E:/3.CONABIO-IBUNAM_CC/bases/ANP/CADNR/CADNR_mes_pas.csv")
 
 #----------------------Graficas
 
@@ -121,21 +119,21 @@ data_summary <- function(data, varname, groupnames){
 #Estadisticas
 
 #Temperatura m?xima
-tmax<-subset(month, Variable=="Temperatura máxima")
+tmax<-subset(month, Variable=="Temperatura máxima", fileEncoding = "UTF-8")
 head(tmax)
 
 Tmax <- data_summary(tmax, varname="Valor", 
                     groupnames=c( "Periodo","Mes", "Variable", "MGC"))
-write.csv(Tmax,"Tmaxrcp45.csv")
+write.csv(Tmax,"CADNR/Tmaxrcp85.csv")
 
 #Temperatura promedio
-tpro<-subset(month, Variable=="Temperatura promedio")
+tpro<-subset(month, Variable=="Temperatura promedio", fileEncoding = "UTF-8")
 head(tpro)
 
 Tmean <- data_summary(tpro, varname="Valor", 
                      groupnames=c( "Periodo","Mes", "Variable", "MGC"))
 rm(tpro)
-write.csv(Tmean,"Tmeanrcp45.csv")
+write.csv(Tmean,"CADNR/Tmeanrcp85.csv", fileEncoding = "UTF-8")
 
 #Temperatura minima
 tmin<-subset(month, Variable=="Temperatura mínima")
@@ -144,7 +142,7 @@ head(tmin)
 Tmin <- data_summary(tmin, varname="Valor", 
                      groupnames=c( "Periodo","Mes", "Variable", "MGC"))
 rm(tmin)
-write.csv(Tmin, "Tminrcp45.csv")
+write.csv(Tmin, "CADNR/Tminrcp85.csv", fileEncoding = "UTF-8" )
 
 #Precipitaci?n
 prec<-subset(month, Variable=="Precipitación")
@@ -152,45 +150,16 @@ head(prec)
 Prec <- data_summary(prec, varname="Valor", 
                      groupnames=c( "Periodo","Mes", "Variable", "MGC"))
 rm(prec)
-write.csv(Prec,"Precrcp45.csv")
+write.csv(Prec,"CADNR/Precrcp85.csv", fileEncoding = "UTF-8")
 
-#---------------------------------------------------------
 #------------------------Grafica temperatura maxima
 
-
-ggplot(Tmax, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
-  geom_point(size = 3)+facet_grid(MGC~Variable)+ 
-  labs( y = "Temperatura máxima (°C)") + theme(legend.position="bottom")+
-  scale_color_manual(values = c('#fed976','#fdae6b','#fd8d3c','#f16913','#e31a1c','#800026'))
-
-#------------------------Grafica temperatura promedio
-
-ggplot(Tmean, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
-  geom_point(size = 3)+facet_grid(MGC~Variable)+ 
-  labs( y = "Temperatura promedio (°C)") + theme(legend.position="bottom")+
-  scale_color_manual(values = c('#fed976','#fdae6b','#fd8d3c','#f16913','#e31a1c','#800026'))
-
-#------------------------Grafica temperatura minima
-
-ggplot(Tmin, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
-  geom_point(size = 3)+facet_grid(MGC~Variable)+ 
-  labs( y = "Temperatura máxima (°C)") + theme(legend.position="bottom")+
-  scale_color_manual(values = c('#fee391','#fdae6b','#fd8d3c','#f16913','#d94801','#662506'))
-
-
-#------------------------precipitacion
-
-ggplot(Prec, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
-     geom_point(size = 3)+facet_grid(MGC~Variable)+ 
-     labs( y = "Precipitación (mm)") + theme(legend.position="bottom")+
-     scale_color_manual(values = c('#a6bddb','#74a9cf','#3690c0','#0570b0','#023858'))
-
 ggplot(Tmax, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
   geom_point(size = 3)+facet_grid(MGC~Variable)+ 
   labs( y = "Temperatura máxima (°C)") + theme(legend.position="bottom")+
   scale_shape_manual(values=c(16,17,15,18,12))+
   scale_color_manual(values = c('#fed976','#fdae6b','#fd8d3c','#f16913','#e31a1c','#800026'))
-ggsave("Centla/Tmax45.jpg", dpi = 300)
+ggsave("CADNR/Tmax85.jpg", dpi = 300)
 
 #------------------------Grafica temperatura promedio
 ggplot(Tmean, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
@@ -198,7 +167,7 @@ ggplot(Tmean, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo
   labs( y = "Temperatura promedio (°C)") + theme(legend.position="bottom")+
   scale_shape_manual(values=c(16,17,15,18,12))+
   scale_color_manual(values = c('#fed976','#fdae6b','#fd8d3c','#f16913','#e31a1c','#800026'))
-ggsave("Centla/Tmean45.jpg", dpi = 300)
+ggsave("CADNR/Tmean85.jpg", dpi = 300)
 
 #------------------------Grafica temperatura minima
 ggplot(Tmin, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
@@ -206,7 +175,7 @@ ggplot(Tmin, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo)
   labs( y = "Temperatura máxima (°C)") + theme(legend.position="bottom")+
   scale_shape_manual(values=c(16,17,15,18,12))+
   scale_color_manual(values = c('#081d58','#225ea8','#41b6c4', "#74c476",'#f16913','#d94801'))
-ggsave("Centla/Tmin45.jpg", dpi = 300)
+ggsave("CADNR/Tmin85.jpg", dpi = 300)
 
 #------------------------precipitacion
 ggplot(Prec, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo))+  
@@ -214,5 +183,5 @@ ggplot(Prec, aes(x=Mes, y=Valor, colour=Periodo, group=Periodo, shape = Periodo)
   labs( y = "Precipitación (mm)") + theme(legend.position="bottom")+
   scale_shape_manual(values=c(16,17,15,18,12))+
   scale_color_manual(values = c('#a6bddb','#74a9cf','#3690c0','#0570b0','#023858'))
-ggsave("Centla/Ppt45.jpg", dpi = 300)
+ggsave("CADNR/Ppt85.jpg", dpi = 300)
 
