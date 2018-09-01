@@ -689,4 +689,5 @@ rm(anp_tmean.2,anp_tmean.3,anp_prec.2,anp_prec.3,anp_prec2,anp_prec3,anp_prec4, 
 #BIND###
 base<-rbind(basesotaprec,basesotatmean,basesotatmin,basesotatmx)
 write.csv(base,"bases/baseclimapais_rcp85_n.csv", fileEncoding = "UTF-8")
-  
+setwd("G:/Mi unidad/ANP_CC")
+write.csv(base,"bases/baseclimapais_rcp85_n.csv", fileEncoding = "UTF-8")
