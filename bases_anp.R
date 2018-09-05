@@ -6,14 +6,14 @@ setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
 base<-read.csv("baseclimapais85.csv")
 
 PC_1<-subset(base,NOMBRE=="Pantanos de Centla")           #1
-LT_1<-subset(base,NOMBRE=="Laguna de TÃ©rminos")           #2
-TC_1<-subset(base,NOMBRE=="TehuacÃ¡n-CuicatlÃ¡n")           #3
+LT_1<-subset(base,NOMBRE=="Laguna de Términos")           #2
+TC_1<-subset(base,NOMBRE=="Tehuacán-Cuicatlán")           #3
 MM_1<-subset(base,NOMBRE=="Mariposa Monarca")             #4
-MN_1<-subset(base,NOMBRE=="Manglares de NichuptÃ©")        #5
+MN_1<-subset(base,NOMBRE=="Manglares de Nichupté")        #5
 J_1<-subset(base,NOMBRE=="Janos")                         #6  
-SSPM_1<-subset(base,NOMBRE=="Sierra de San Pedro MÃ¡rtir") #7
-C1857_1<-subset(base,NOMBRE=="ConstituciÃ³n de 1857")      #9
-CS_1<-subset(base,NOMBRE=="CaÃ±Ã³n del Sumidero")           #11
+SSPM_1<-subset(base,NOMBRE=="Sierra de San Pedro Mártir") #7
+C1857_1<-subset(base,NOMBRE=="Constitución de 1857")      #9
+CS_1<-subset(base,NOMBRE=="Cañon del Sumidero")           #11
 SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
 EV_1<-subset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
 CAD_1<-subset(base,str_detect(base$NOMBRE,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
