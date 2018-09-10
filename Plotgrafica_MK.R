@@ -6,7 +6,7 @@ library(dplyr)
 #tb_vars %>% purrr::map(~ ggplot(.x, aes(x = area_log, y = mu,label =ID_anp )) +
  #                        geom_point(size = 1) +  geom_point(color="purple")+
   #                       geom_text_repel(aes(label=ID_anp), size = 3)) 
-setwd("")
+setwd("~/Google Drive File Stream/Mi unidad/MannKendall")
 base<-read.csv("~/Google Drive File Stream/Mi unidad/MannKendall/TMinima_all_rcp85.csv")
 names(base)[3]<-paste("NOMBRE")
 
