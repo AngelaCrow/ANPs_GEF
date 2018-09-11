@@ -7,8 +7,8 @@ library(dplyr)
  #                        geom_point(size = 1) +  geom_point(color="purple")+
   #                       geom_text_repel(aes(label=ID_anp), size = 3)) 
 setwd("~/Google Drive File Stream/Mi unidad/MannKendall")
-base<-read.csv("~/Google Drive File Stream/Mi unidad/MannKendall/TMinima_all_rcp85.csv")
-names(base)[3]<-paste("NOMBRE")
+base<-read.csv("~/Google Drive File Stream/Mi unidad/MannKendall/TMinima_all_rcp45.csv")
+names(base)[2]<-paste("NOMBRE")
 
 PC_1<-subset(base,NOMBRE=="Pantanos de Centla")           #1
 LT_1<-subset(base,NOMBRE=="Laguna de Términos")           #2
@@ -18,7 +18,7 @@ MN_1<-subset(base,NOMBRE=="Manglares de Nichupté")        #5
 J_1<-subset(base,NOMBRE=="Janos")                         #6
 SSPM_1<-subset(base,NOMBRE=="Sierra de San Pedro Mártir") #7
 C1857_1<-subset(base,NOMBRE=="Constitución de 1857")      #9
-CS_1<-subset(base,NOMBRE=="Cañon del Sumidero")           #11
+CS_1<-subset(base,NOMBRE=="Cañón del Sumidero")           #11
 SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
 EV_1<-subset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
 CAD_1<-subset(base,str_detect(base$NOMBRE,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
