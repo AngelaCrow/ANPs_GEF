@@ -10,18 +10,18 @@ names(anps_todas)
 anp_coor <- anps_todas[c("POINT_X", "POINT_Y")]
 
 #####CNRMCM5_####
-mk_pvalue<-raster("data_mk/tminimacnrmcm5_rcp45_mk_p.tif")
-names(mk_pvalue)<-"mk_p"
-mk_tau<-raster("data_mk/tminimacnrmcm5_rcp45_mk_tau.tif")
-names(mk_tau)<-"mk_tau"
-mk_z<-raster("data_mk/tminimacnrmcm5_rcp45_mk_Z.tif")
-names(mk_z)<-"mk_z"
+MK_Pvalue<-raster("data_mk/PrecipitacionCNRMCM5_rcp45_MK_P.tif")
+names(MK_Pvalue)<-"MK_P"
+MK_TAU<-raster("data_mk/PrecipitacionCNRMCM5_rcp45_MK_tau.tif")
+names(MK_TAU)<-"MK_TAU"
+MK_Z<-raster("data_mk/PrecipitacionCNRMCM5_rcp45_MK_Z.tif")
+names(MK_Z)<-"MK_Z"
 
-rcp45.p<-data.frame(extract(mk_pvalue,anp_coor), Variable="Pvalue")
+rcp45.p<-data.frame(extract(MK_Pvalue,anp_coor), Variable="Pvalue")
 names(rcp45.p)[1]<-"Valor"
-rcp45.tau<-data.frame(extract(mk_tau,anp_coor), Variable="tau")
+rcp45.tau<-data.frame(extract(MK_TAU,anp_coor), Variable="tau")
 names(rcp45.tau)[1]<-"Valor"
-rcp45.z<-data.frame(extract(mk_z,anp_coor), Variable="z")
+rcp45.z<-data.frame(extract(MK_Z,anp_coor), Variable="z")
 names(rcp45.z)[1]<-"Valor"
 
 rcp45<-rbind(rcp45.tau, rcp45.p,rcp45.z)
@@ -39,24 +39,24 @@ tb_vars <- base.df %>% split(.$Variable) %>%
   map(~na.omit(.x)) %>% map(~ mutate(.x,variable_min=Promedio-var,
                                      variable_max=Promedio+var,ID_anp=1:length(Promedio)))
 
-write.csv(tb_vars,"tminimacnrmcm5_all_rcp45.csv")
+write.csv(tb_vars,"PrecipitacionCNRMCM5_all_rcp45.csv")
 
-CNRMCM5_rcp45.vars<-data.frame(read.csv("tminimacnrmcm5_all_rcp45.csv"), MGC="CNRMCM5 RCP 4.5")
+CNRMCM5_rcp45.vars<-data.frame(read.csv("PrecipitacionCNRMCM5_all_rcp45.csv"), MGC="CNRMCM5 RCP 4.5")
 names(CNRMCM5_rcp45.vars)
+rm(MK_Pvalue,MK_TAU,MK_Z)
+#####HADGEM2_ES_####
+MK_Pvalue<-raster("data_mk/PrecipitacionHADGEM2_ES_rcp45_MK_P.tif")
+names(MK_Pvalue)<-"MK_P"
+MK_TAU<-raster("data_mk/PrecipitacionHADGEM2_ES_rcp45_MK_tau.tif")
+names(MK_TAU)<-"MK_TAU"
+MK_Z<-raster("data_mk/PrecipitacionHADGEM2_ES_rcp45_MK_Z.tif")
+names(MK_Z)<-"MK_Z"
 
-#####hadgem2_es_####
-mk_pvalue<-raster("data_mk/tminimahadgem2_es_rcp45_mk_p.tif")
-names(mk_pvalue)<-"mk_p"
-mk_tau<-raster("data_mk/tminimahadgem2_es_rcp45_mk_tau.tif")
-names(mk_tau)<-"mk_tau"
-mk_z<-raster("data_mk/tminimahadgem2_es_rcp45_mk_Z.tif")
-names(mk_z)<-"mk_z"
-
-rcp45.p<-data.frame(extract(mk_pvalue,anp_coor), Variable="Pvalue")
+rcp45.p<-data.frame(extract(MK_Pvalue,anp_coor), Variable="Pvalue")
 names(rcp45.p)[1]<-"Valor"
-rcp45.tau<-data.frame(extract(mk_tau,anp_coor), Variable="tau")
+rcp45.tau<-data.frame(extract(MK_TAU,anp_coor), Variable="tau")
 names(rcp45.tau)[1]<-"Valor"
-rcp45.z<-data.frame(extract(mk_z,anp_coor), Variable="z")
+rcp45.z<-data.frame(extract(MK_Z,anp_coor), Variable="z")
 names(rcp45.z)[1]<-"Valor"
 
 rcp45<-rbind(rcp45.tau, rcp45.p,rcp45.z)
@@ -74,24 +74,24 @@ tb_vars <- base.df %>% split(.$Variable) %>%
   map(~na.omit(.x)) %>% map(~ mutate(.x,variable_min=Promedio-var,
                                      variable_max=Promedio+var,ID_anp=1:length(Promedio)))
 
-write.csv(tb_vars,"tminimahadgem2_es_all_rcp45.csv")
+write.csv(tb_vars,"PrecipitacionHADGEM2_ES_all_rcp45.csv")
 
-HADGEM2_es_rcp45.vars<-data.frame(read.csv("tminimahadgem2_es_all_rcp45.csv"), MGC="HADGEM2_ES RCP 4.5")
-names(HADGEM2_es_rcp45.vars)
+HADGEM2_ES_rcp45.vars<-data.frame(read.csv("PrecipitacionHADGEM2_ES_all_rcp45.csv"), MGC="HADGEM2_ES RCP 4.5")
+names(HADGEM2_ES_rcp45.vars)
+rm(MK_Pvalue,MK_TAU,MK_Z)
+#####MPI_ESM_LR_####
+MK_Pvalue<-raster("data_mk/PrecipitacionMPI_ESM_LR_rcp45_MK_P.tif")
+names(MK_Pvalue)<-"MK_P"
+MK_TAU<-raster("data_mk/PrecipitacionMPI_ESM_LR_rcp45_MK_tau.tif")
+names(MK_TAU)<-"MK_TAU"
+MK_Z<-raster("data_mk/PrecipitacionMPI_ESM_LR_rcp45_MK_Z.tif")
+names(MK_Z)<-"MK_Z"
 
-#####mpi_esm_lr_####
-mk_pvalue<-raster("data_mk/tminimampi_esm_lr_rcp45_mk_p.tif")
-names(mk_pvalue)<-"mk_p"
-mk_tau<-raster("data_mk/tminimampi_esm_lr_rcp45_mk_tau.tif")
-names(mk_tau)<-"mk_tau"
-mk_z<-raster("data_mk/tminimampi_esm_lr_rcp45_mk_Z.tif")
-names(mk_z)<-"mk_z"
-
-rcp45.p<-data.frame(extract(mk_pvalue,anp_coor), Variable="Pvalue")
+rcp45.p<-data.frame(extract(MK_Pvalue,anp_coor), Variable="Pvalue")
 names(rcp45.p)[1]<-"Valor"
-rcp45.tau<-data.frame(extract(mk_tau,anp_coor), Variable="tau")
+rcp45.tau<-data.frame(extract(MK_TAU,anp_coor), Variable="tau")
 names(rcp45.tau)[1]<-"Valor"
-rcp45.z<-data.frame(extract(mk_z,anp_coor), Variable="z")
+rcp45.z<-data.frame(extract(MK_Z,anp_coor), Variable="z")
 names(rcp45.z)[1]<-"Valor"
 
 rcp45<-rbind(rcp45.tau, rcp45.p,rcp45.z)
@@ -109,23 +109,24 @@ tb_vars <- base.df %>% split(.$Variable) %>%
   map(~na.omit(.x)) %>% map(~ mutate(.x,variable_min=Promedio-var,
                                      variable_max=Promedio+var,ID_anp=1:length(Promedio)))
 
-write.csv(tb_vars,"tminimampi_esm_lr_all_rcp45.csv")
-MPI_ESM_LR_rcp45.vars<-data.frame(read.csv("tminimampi_esm_lr_all_rcp45.csv"), MGC="MPI_ESM_LR RCP 4.5")
+write.csv(tb_vars,"PrecipitacionMPI_ESM_LR_all_rcp45.csv")
+MPI_ESM_LR_rcp45.vars<-data.frame(read.csv("PrecipitacionMPI_ESM_LR_all_rcp45.csv"), MGC="MPI_ESM_LR RCP 4.5")
 names(MPI_ESM_LR_rcp45.vars)
+rm(MK_Pvalue,MK_TAU,MK_Z)
 
-#####gfdl_cm3_####
-mk_pvalue<-raster("data_mk/tminimagfdl_cm3_rcp45_mk_p.tif")
-names(mk_pvalue)<-"mk_p"
-mk_tau<-raster("data_mk/tminimagfdl_cm3_rcp45_mk_tau.tif")
-names(mk_tau)<-"mk_tau"
-mk_z<-raster("data_mk/tminimagfdl_cm3_rcp45_mk_Z.tif")
-names(mk_z)<-"mk_z"
+#####GFDL_CM3_####
+MK_Pvalue<-raster("data_mk/PrecipitacionGFDL_CM3_rcp45_MK_P.tif")
+names(MK_Pvalue)<-"MK_P"
+MK_TAU<-raster("data_mk/PrecipitacionGFDL_CM3_rcp45_MK_tau.tif")
+names(MK_TAU)<-"MK_TAU"
+MK_Z<-raster("data_mk/PrecipitacionGFDL_CM3_rcp45_MK_Z.tif")
+names(MK_Z)<-"MK_Z"
 
-rcp45.p<-data.frame(extract(mk_pvalue,anp_coor), Variable="Pvalue")
+rcp45.p<-data.frame(extract(MK_Pvalue,anp_coor), Variable="Pvalue")
 names(rcp45.p)[1]<-"Valor"
-rcp45.tau<-data.frame(extract(mk_tau,anp_coor), Variable="tau")
+rcp45.tau<-data.frame(extract(MK_TAU,anp_coor), Variable="tau")
 names(rcp45.tau)[1]<-"Valor"
-rcp45.z<-data.frame(extract(mk_z,anp_coor), Variable="z")
+rcp45.z<-data.frame(extract(MK_Z,anp_coor), Variable="z")
 names(rcp45.z)[1]<-"Valor"
 
 rcp45<-rbind(rcp45.tau, rcp45.p,rcp45.z)
@@ -143,10 +144,10 @@ tb_vars <- base.df %>% split(.$Variable) %>%
   map(~na.omit(.x)) %>% map(~ mutate(.x,variable_min=Promedio-var,
                                      variable_max=Promedio+var,ID_anp=1:length(Promedio)))
 
-write.csv(tb_vars,"tminimagfdl_cm3_all_rcp45.csv")
-GDFL_CM3_rcp45.vars<-data.frame(read.csv("tminimagfdl_cm3_all_rcp45.csv"), MGC="GDFL_CM3 RCP 4.5")
+write.csv(tb_vars,"PrecipitacionGFDL_CM3_all_rcp45.csv")
+GDFL_CM3_rcp45.vars<-data.frame(read.csv("PrecipitacionGFDL_CM3_all_rcp45.csv"), MGC="GDFL_CM3 RCP 4.5")
 names(GDFL_CM3_rcp45.vars)
-
+rm(MK_Pvalue,MK_TAU,MK_Z, rcp45,rcp45.p, rcp45.tau, rcp45.z, tb_vars, base.df)
 ####bind####
-base<-rbind(CNRMCM5_rcp45.vars,GDFL_CM3_rcp45.vars,HADGEM2_es_rcp45.vars,MPI_ESM_LR_rcp45.vars)
-write.csv(base,"tminima_all_rcp45.csv")
+base<-rbind(CNRMCM5_rcp45.vars,GDFL_CM3_rcp45.vars,HADGEM2_ES_rcp45.vars,MPI_ESM_LR_rcp45.vars)
+write.csv(base,"Precipitacion_all_rcp45.csv")
