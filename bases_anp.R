@@ -5,13 +5,13 @@ rm(list = ls())
 setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
 base<-read.csv("baseclimapais85.csv")
 
-PC_1<-subset(base,NOMBRE=="Pantanos de Centla")           #1
-LT_1<-subset(base,NOMBRE=="Laguna de Términos")           #2
-TC_1<-subset(base,NOMBRE=="Tehuacán-Cuicatlán")           #3
-MM_1<-subset(base,NOMBRE=="Mariposa Monarca")             #4
-MN_1<-subset(base,NOMBRE=="Manglares de Nichupté")        #5
-J_1<-subset(base,NOMBRE=="Janos")                         #6  
-SSPM_1<-subset(base,NOMBRE=="Sierra de San Pedro Mártir") #7
+PC<-subset(base,NOMBRE=="Pantanos de Centla")           #1
+LT<-subset(base, str_detect(base$NOMBRE, "Laguna de T")) 
+TC<-subset(base, str_detect(base$NOMBRE, "Tehuac"))
+MM<-subset(base,NOMBRE=="Mariposa Monarca")             #4
+MN<-subset(base, str_detect(base$NOMBRE, "Manglares de Nichu"))
+J<-subset(base,NOMBRE=="Janos")                         #6  
+SSPM<-subset(base, str_detect(base$NOMBRE, "Sierra de San Pedro M"))
 C1857_1<-subset(base,NOMBRE=="Constitución de 1857")      #9
 CS_1<-subset(base,NOMBRE=="Cañon del Sumidero")           #11
 SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
