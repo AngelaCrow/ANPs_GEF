@@ -12,11 +12,11 @@ MM<-subset(base,NOMBRE=="Mariposa Monarca")             #4
 MN<-subset(base, str_detect(base$NOMBRE, "Manglares de Nichu"))
 J<-subset(base,NOMBRE=="Janos")                         #6  
 SSPM<-subset(base, str_detect(base$NOMBRE, "Sierra de San Pedro M"))
-C1857_1<-subset(base,NOMBRE=="Constitución de 1857")      #9
-CS_1<-subset(base,NOMBRE=="Cañon del Sumidero")           #11
-SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
-EV_1<-subset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
-CAD_1<-subset(base,str_detect(base$NOMBRE,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
+C1857<-subset(base, str_detect(base$NOMBRE, "Constituci"))
+CS<-subset(base, str_detect(base$NOMBRE, "del Sumidero"))
+SO<-subset(base,NOMBRE=="Selva El Ocote")               #12
+EV<-subset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
+CAD<-subset(base,str_detect(base$NOMBRE,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
 M_1<-subset(base, str_detect(base$NOMBRE, "Mapim"))  #10  "Mapim?"
 
 write.csv(PC_1, "bases_mes/Centla/centla_mes85.csv", fileEncoding = "UTF-8")
