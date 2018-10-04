@@ -2,84 +2,140 @@ library(stringr)
 
 rm(list = ls())
 
-setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
-base<-read.csv("baseclimapais85.csv")
+#setwd("/Volumes/GoogleDrive/My Drive/ANP_CC")
 
-PC<-subset(base,NOMBRE=="Pantanos de Centla")           #1
-LT<-subset(base, str_detect(base$NOMBRE, "Laguna de T")) 
-TC<-subset(base, str_detect(base$NOMBRE, "Tehuac"))
-MM<-subset(base,NOMBRE=="Mariposa Monarca")             #4
-MN<-subset(base, str_detect(base$NOMBRE, "Manglares de Nichu"))
-J<-subset(base,NOMBRE=="Janos")                         #6  
-SSPM<-subset(base, str_detect(base$NOMBRE, "Sierra de San Pedro M"))
-C1857<-subset(base, str_detect(base$NOMBRE, "Constituci"))
-CS<-subset(base, str_detect(base$NOMBRE, "del Sumidero"))
-SO<-subset(base,NOMBRE=="Selva El Ocote")               #12
-EV<-subset(base, str_detect(base$NOMBRE, "El Viz"))                #13  "El Vizca?no"
-CAD<-subset(base,str_detect(base$NOMBRE,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
-M_1<-subset(base, str_detect(base$NOMBRE, "Mapim"))  #10  "Mapim?"
+#Mensual####
+#rcp45
+base<-read.csv("bases/GFDL_CM3_rcp45anp_mes_g.csv")
 
-write.csv(PC_1, "bases_mes/Centla/centla_mes85.csv", fileEncoding = "UTF-8")
-write.csv(LT_1, "bases_mes/Terminos/terminos_mes85.csv",fileEncoding = "UTF-8")
-write.csv(TC_1, "bases_mes/Tehuacan/tehuacan_mes85.csv",fileEncoding = "UTF-8")
-write.csv(MM_1, "bases_mes/Monarca/monarca_mes85.csv",fileEncoding = "UTF-8")
-write.csv(MN_1, "bases_mes/Nichupte/nichupte_mes85.csv",fileEncoding = "UTF-8")
-write.csv(J_1, "bases_mes/Janos/janos_mes85.csv", fileEncoding = "UTF-8")
-write.csv(SSPM_1, "bases_mes/Martir/ssmartir_mes85.csv", fileEncoding = "UTF-8")
-write.csv(C1857_1, "bases_mes/Constitucion/constitucion_mes85.csv", fileEncoding = "UTF-8")
-write.csv(CS_1, "bases_mes/Sumidero/sumidero_mes85.csv", fileEncoding = "UTF-8")
-write.csv(SO_1, "bases_mes/Ocote/ocote_mes85.csv", fileEncoding = "UTF-8")
-write.csv(EV_1, "bases_mes/Vizcaino/vizcaino_mes85.csv", fileEncoding = "UTF-8")
-write.csv(CAD_1, "bases_mes/CADNR/CADNR_mes85.csv", fileEncoding = "UTF-8")
-write.csv(M_1, "bases_mes/Mapimi/mapimi_mes85.csv", fileEncoding = "UTF-8")
+PC_1<-subset(base,NOMBRE_FIN=="Pantanos de Centla")           #1
+LT_1<-subset(base, str_detect(base$NOMBRE_FIN, "Laguna de T")) 
+TC_1<-subset(base, str_detect(base$NOMBRE_FIN, "Tehuac"))
+MM_1<-subset(base,NOMBRE_FIN=="Mariposa Monarca")             #4
+MN_1<-subset(base, str_detect(base$NOMBRE_FIN, "Manglares de Nichu"))
+J_1<-subset(base,NOMBRE_FIN=="Janos")                         #6  
+SSPM_1<-subset(base, str_detect(base$NOMBRE_FIN, "Sierra de San Pedro M"))
+C1457_1<-subset(base, str_detect(base$NOMBRE_FIN, "Constituci"))
+CS_1<-subset(base, str_detect(base$NOMBRE_FIN, "del Sumidero"))
+SO_1<-subset(base,NOMBRE_FIN=="Selva El Ocote")               #12
+EV_1<-subset(base, str_detect(base$NOMBRE_FIN, "El Viz"))                #13  "El Vizca?no"
+CAD_1<-subset(base,str_detect(base$NOMBRE_FIN,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
+M_1<-subset(base, str_detect(base$NOMBRE_FIN, "Mapim"))  #10  "Mapim?"
+
+write.csv(PC_1, "bases/Centla/GFDL_CM3/centla_mes45.csv", fileEncoding = "UTF-8")
+write.csv(LT_1, "bases/Terminos/GFDL_CM3/terminos_mes45.csv",fileEncoding = "UTF-8")
+write.csv(TC_1, "bases/Tehuacan/GFDL_CM3/tehuacan_mes45.csv",fileEncoding = "UTF-8")
+write.csv(MM_1, "bases/Monarca/GFDL_CM3/monarca_mes45.csv",fileEncoding = "UTF-8")
+write.csv(MN_1, "bases/Nichupte/GFDL_CM3/nichupte_mes45.csv",fileEncoding = "UTF-8")
+write.csv(J_1, "bases/Janos/GFDL_CM3/janos_mes45.csv", fileEncoding = "UTF-8")
+write.csv(SSPM_1, "bases/Martir/GFDL_CM3/martir_mes45.csv", fileEncoding = "UTF-8")
+write.csv(C1457_1, "bases/Constitucion/GFDL_CM3/constitucion_mes45.csv", fileEncoding = "UTF-8")
+write.csv(CS_1, "bases/Sumidero/GFDL_CM3/sumidero_mes45.csv", fileEncoding = "UTF-8")
+write.csv(SO_1, "bases/Ocote/GFDL_CM3/ocote_mes45.csv", fileEncoding = "UTF-8")
+write.csv(EV_1, "bases/Vizcaino/GFDL_CM3/vizcaino_mes45.csv", fileEncoding = "UTF-8")
+write.csv(CAD_1, "bases/CADNR/GFDL_CM3/CADNR_mes45.csv", fileEncoding = "UTF-8")
+write.csv(M_1, "bases/Mapimi/GFDL_CM3/mapimi_mes45.csv", fileEncoding = "UTF-8")
+
+rm(list = ls())
+
+##rcp85
+base<-read.csv("bases/GFDL_CM3_rcp85anp_mes_g.csv")
+
+PC_1<-subset(base,NOMBRE_FIN=="Pantanos de Centla")           #1
+LT_1<-subset(base, str_detect(base$NOMBRE_FIN, "Laguna de T")) 
+TC_1<-subset(base, str_detect(base$NOMBRE_FIN, "Tehuac"))
+MM_1<-subset(base,NOMBRE_FIN=="Mariposa Monarca")             #4
+MN_1<-subset(base, str_detect(base$NOMBRE_FIN, "Manglares de Nichu"))
+J_1<-subset(base,NOMBRE_FIN=="Janos")                         #6  
+SSPM_1<-subset(base, str_detect(base$NOMBRE_FIN, "Sierra de San Pedro M"))
+C1857_1<-subset(base, str_detect(base$NOMBRE_FIN, "Constituci"))
+CS_1<-subset(base, str_detect(base$NOMBRE_FIN, "del Sumidero"))
+SO_1<-subset(base,NOMBRE_FIN=="Selva El Ocote")               #12
+EV_1<-subset(base, str_detect(base$NOMBRE_FIN, "El Viz"))                #13  "El Vizca?no"
+CAD_1<-subset(base,str_detect(base$NOMBRE_FIN,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
+M_1<-subset(base, str_detect(base$NOMBRE_FIN, "Mapim"))  #10  "Mapim?"
+
+write.csv(PC_1, "bases/Centla/GFDL_CM3/centla_mes85.csv", fileEncoding = "UTF-8")
+write.csv(LT_1, "bases/Terminos/GFDL_CM3/terminos_mes85.csv",fileEncoding = "UTF-8")
+write.csv(TC_1, "bases/Tehuacan/GFDL_CM3/tehuacan_mes85.csv",fileEncoding = "UTF-8")
+write.csv(MM_1, "bases/Monarca/GFDL_CM3/monarca_mes85.csv",fileEncoding = "UTF-8")
+write.csv(MN_1, "bases/Nichupte/GFDL_CM3/nichupte_mes85.csv",fileEncoding = "UTF-8")
+write.csv(J_1, "bases/Janos/GFDL_CM3/janos_mes85.csv", fileEncoding = "UTF-8")
+write.csv(SSPM_1, "bases/Martir/GFDL_CM3/martir_mes85.csv", fileEncoding = "UTF-8")
+write.csv(C1857_1, "bases/Constitucion/GFDL_CM3/constitucion_mes85.csv", fileEncoding = "UTF-8")
+write.csv(CS_1, "bases/Sumidero/GFDL_CM3/sumidero_mes85.csv", fileEncoding = "UTF-8")
+write.csv(SO_1, "bases/Ocote/GFDL_CM3/ocote_mes85.csv", fileEncoding = "UTF-8")
+write.csv(EV_1, "bases/Vizcaino/GFDL_CM3/vizcaino_mes85.csv", fileEncoding = "UTF-8")
+write.csv(CAD_1, "bases/CADNR/GFDL_CM3/CADNR_mes85.csv", fileEncoding = "UTF-8")
+write.csv(M_1, "bases/Mapimi/GFDL_CM3/mapimi_mes85.csv", fileEncoding = "UTF-8")
+
+rm(list = ls())
+
+#Anual####
+#rcp45
+base<-read.csv("bases/GFDL_CM3_rcp45anp_anual_g.csv")
+
+PC_1<-subset(base,NOMBRE_FIN=="Pantanos de Centla")           #1
+LT_1<-subset(base, str_detect(base$NOMBRE_FIN, "Laguna de T")) 
+TC_1<-subset(base, str_detect(base$NOMBRE_FIN, "Tehuac"))
+MM_1<-subset(base,NOMBRE_FIN=="Mariposa Monarca")             #4
+MN_1<-subset(base, str_detect(base$NOMBRE_FIN, "Manglares de Nichu"))
+J_1<-subset(base,NOMBRE_FIN=="Janos")                         #6  
+SSPM_1<-subset(base, str_detect(base$NOMBRE_FIN, "Sierra de San Pedro M"))
+C1457_1<-subset(base, str_detect(base$NOMBRE_FIN, "Constituci"))
+CS_1<-subset(base, str_detect(base$NOMBRE_FIN, "del Sumidero"))
+SO_1<-subset(base,NOMBRE_FIN=="Selva El Ocote")               #12
+EV_1<-subset(base, str_detect(base$NOMBRE_FIN, "El Viz"))                #13  "El Vizca?no"
+CAD_1<-subset(base,str_detect(base$NOMBRE_FIN,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
+M_1<-subset(base, str_detect(base$NOMBRE_FIN, "Mapim"))  #10  "Mapim?"
+
+write.csv(PC_1, "bases/Centla/GFDL_CM3/centla_anual45.csv", fileEncoding = "UTF-8")
+write.csv(LT_1, "bases/Terminos/GFDL_CM3/terminos_anual45.csv",fileEncoding = "UTF-8")
+write.csv(TC_1, "bases/Tehuacan/GFDL_CM3/tehuacan_anual45.csv",fileEncoding = "UTF-8")
+write.csv(MM_1, "bases/Monarca/GFDL_CM3/monarca_anual45.csv",fileEncoding = "UTF-8")
+write.csv(MN_1, "bases/Nichupte/GFDL_CM3/nichupte_anual45.csv",fileEncoding = "UTF-8")
+write.csv(J_1, "bases/Janos/GFDL_CM3/janos_anual45.csv", fileEncoding = "UTF-8")
+write.csv(SSPM_1, "bases/Martir/GFDL_CM3/martir_anual45.csv", fileEncoding = "UTF-8")
+write.csv(C1457_1, "bases/Constitucion/GFDL_CM3/constitucion_anual45.csv", fileEncoding = "UTF-8")
+write.csv(CS_1, "bases/Sumidero/GFDL_CM3/sumidero_anual45.csv", fileEncoding = "UTF-8")
+write.csv(SO_1, "bases/Ocote/GFDL_CM3/ocote_anual45.csv", fileEncoding = "UTF-8")
+write.csv(EV_1, "bases/Vizcaino/GFDL_CM3/vizcaino_anual45.csv", fileEncoding = "UTF-8")
+write.csv(CAD_1, "bases/CADNR/GFDL_CM3/CADNR_anual45.csv", fileEncoding = "UTF-8")
+write.csv(M_1, "bases/Mapimi/GFDL_CM3/mapimi_anual45.csv", fileEncoding = "UTF-8")
+
+rm(list = ls())
+
+##rcp85
+base<-read.csv("bases/GFDL_CM3_rcp85anp_anual_g.csv")
+
+PC_1<-subset(base,NOMBRE_FIN=="Pantanos de Centla")           #1
+LT_1<-subset(base, str_detect(base$NOMBRE_FIN, "Laguna de T")) 
+TC_1<-subset(base, str_detect(base$NOMBRE_FIN, "Tehuac"))
+MM_1<-subset(base,NOMBRE_FIN=="Mariposa Monarca")             #4
+MN_1<-subset(base, str_detect(base$NOMBRE_FIN, "Manglares de Nichu"))
+J_1<-subset(base,NOMBRE_FIN=="Janos")                         #6  
+SSPM_1<-subset(base, str_detect(base$NOMBRE_FIN, "Sierra de San Pedro M"))
+C1857_1<-subset(base, str_detect(base$NOMBRE_FIN, "Constituci"))
+CS_1<-subset(base, str_detect(base$NOMBRE_FIN, "del Sumidero"))
+SO_1<-subset(base,NOMBRE_FIN=="Selva El Ocote")               #12
+EV_1<-subset(base, str_detect(base$NOMBRE_FIN, "El Viz"))                #13  "El Vizca?no"
+CAD_1<-subset(base,str_detect(base$NOMBRE_FIN,"C.A.D.N.R. 004 Don Mart"))   #8   "C.A.D.N.R. 004 Don Mart?n"
+M_1<-subset(base, str_detect(base$NOMBRE_FIN, "Mapim"))  #10  "Mapim?"
+
+write.csv(PC_1, "bases/Centla/GFDL_CM3/centla_anual85.csv", fileEncoding = "UTF-8")
+write.csv(LT_1, "bases/Terminos/GFDL_CM3/terminos_anual85.csv",fileEncoding = "UTF-8")
+write.csv(TC_1, "bases/Tehuacan/GFDL_CM3/tehuacan_anual85.csv",fileEncoding = "UTF-8")
+write.csv(MM_1, "bases/Monarca/GFDL_CM3/monarca_anual85.csv",fileEncoding = "UTF-8")
+write.csv(MN_1, "bases/Nichupte/GFDL_CM3/nichupte_anual85.csv",fileEncoding = "UTF-8")
+write.csv(J_1, "bases/Janos/GFDL_CM3/janos_anual85.csv", fileEncoding = "UTF-8")
+write.csv(SSPM_1, "bases/Martir/GFDL_CM3/martir_anual85.csv", fileEncoding = "UTF-8")
+write.csv(C1857_1, "bases/Constitucion/GFDL_CM3/constitucion_anual85.csv", fileEncoding = "UTF-8")
+write.csv(CS_1, "bases/Sumidero/GFDL_CM3/sumidero_anual85.csv", fileEncoding = "UTF-8")
+write.csv(SO_1, "bases/Ocote/GFDL_CM3/ocote_anual85.csv", fileEncoding = "UTF-8")
+write.csv(EV_1, "bases/Vizcaino/GFDL_CM3/vizcaino_anual85.csv", fileEncoding = "UTF-8")
+write.csv(CAD_1, "bases/CADNR/GFDL_CM3/CADNR_anual85.csv", fileEncoding = "UTF-8")
+write.csv(M_1, "bases/Mapimi/GFDL_CM3/mapimi_anual85.csv", fileEncoding = "UTF-8")
+
+rm(list = ls())
 
 
-base<-anp_hum
-
-PC_1<-subset(base,NOMBRE=="Pantanos de Centla")           #1
-LT_1<-subset(base,NOMBRE=="Laguna de Términos")           #2
-TC_1<-subset(base,NOMBRE=="Tehuacán-Cuicatlán")           #3
-MM_1<-subset(base,NOMBRE=="Mariposa Monarca")             #4
-MN_1<-subset(base,NOMBRE=="Manglares de Nichupté")        #5
-J_1<-subset(base,NOMBRE=="Janos")                         #6  
-SSPM_1<-subset(base,NOMBRE=="Sierra de San Pedro Mártir") #7
-CAD_1<-subset(base,NOMBRE=="C.A.D.N.R. 004 Don Martín")   #8   "C.A.D.N.R. 004 Don Mart?n"
-C1857_1<-subset(base,NOMBRE=="Constitución de 1857")      #9
-M_1<-subset(base,NOMBRE=="Mapimí")                        #10  "Mapim?"
-CS_1<-subset(base,NOMBRE=="Cañón del Sumidero")           #11
-SO_1<-subset(base,NOMBRE=="Selva El Ocote")               #12
-EV_1<-subset(base,NOMBRE=="El Vizcaíno")                 #13  "El Vizca?no"
-
-
-dir.create("bases")
-write.csv(PC_1, "bases/Centlahumedad45.csv")
-write.csv(LT_1, "bases/Terminoshumedad45.csv")
-write.csv(TC_1, "bases/Tehuacanhumedad45.csv")
-write.csv(MM_1, "bases/Monarcahumedad45.csv")
-write.csv(MN_1, "bases/Nichuptehumedad45.csv")
-write.csv(J_1, "bases/Janoshumedad45.csv")
-write.csv(SSPM_1, "bases/Martirhumedad45.csv")
-write.csv(C1857_1, "bases/Constitucionhumedad45.csv")
-write.csv(CS_1, "bases/Sumiderohumedad45.csv")
-write.csv(SO_1, "bases/Ocote/ocote_mes45.csv")
-write.csv(EV_1, "bases/Vizcainohumedad45.csv")
-write.csv(CAD_1, "bases/CADNRhumedad45.csv")
-write.csv(M_1, "bases/Mapimihumedad45.csv")
-
-
-rm(PC_1, LT_1, TC_1, MM_1, MN_1, J_1,
-   SSPM_1,CAD_1,C1857_1,M_1,CS_1,SO_1,EV_1)
-
-write.csv(PC_1, "bases/Centla/CNRMCM5_rcp45centla_anual.csv")
-write.csv(LT_1, "bases/Terminos/CNRMCM5_rcp45terminos_anual.csv")
-write.csv(TC_1, "bases/Tehuacan/CNRMCM5_rcp45tehuacan_anual.csv")
-write.csv(MM_1, "bases/Monarca/CNRMCM5_rcp45monarca_anual.csv")
-write.csv(MN_1, "bases/Nichupte/CNRMCM5_rcp45nichupte_anual.csv")
-write.csv(J_1, "bases/Janos/CNRMCM5_rcp45janos_anual.csv")
-write.csv(SSPM_1, "bases/Martir/CNRMCM5_rcp45ssmartir_anual.csv")
-write.csv(CAD_1, "bases/CADNR/CNRMCM5_rcp45CADNR_anual.csv")
-write.csv(C1857_1, "bases/Constitucion/CNRMCM5_rcp45constitucion_anual.csv")
-write.csv(M_1, "bases/Mapimi/CNRMCM5_rcp45mapimi_anual.csv")
-write.csv(CS_1, "bases/Sumidero/CNRMCM5_rcp45sumidero_anual.csv")
-write.csv(SO_1, "bases/Ocote/CNRMCM5_rcp45ocote_anual.csv")
-write.csv(EV_1, "bases/Vizcaino/CNRMCM5_rcp45vizcaino_anual.csv")
